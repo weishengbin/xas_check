@@ -3,29 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <title>xas-check</title>
+    <link href="https://www.asch.io/favicon.ico" rel="icon" data-n-head="true">
     <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
+    <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script type="text/javascript" th:inline="javascript">
-
+        var baseUrl = 'https://wallet.asch.io';
         var baseAddr = 'AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw';
 
-        var httpRequest = new XMLHttpRequest();
-        httpRequest.open('GET', 'https://wallet.asch.io/api/v2/transfers?orderBy=timestamp:desc&limit=10&offset=0&ownerId=' + baseAddr, true);
-        httpRequest.send();
-        httpRequest.onreadystatechange = function () {
-            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-                var json = httpRequest.responseText;
-                console.log(json);
+        var total = 0;
+        var totalPage = 0;
+        var pageNum = 1;
+        var pageSize = 10;
+        var ts = 0;
+        baseFun(pageNum);
+        function baseFun(pageNum) {
+            var offset = (pageNum - 1) * pageSize;
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.open('GET', baseUrl + '/api/v2/transfers?orderBy=timestamp:desc&limit=' + pageSize + '&offset=' + offset + '&ownerId=' + baseAddr, true);
+            httpRequest.send();
+            httpRequest.onreadystatechange = function () {
+                if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                    var json = httpRequest.responseText;
+                    json = JSON.parse(json)
+                    document.getElementById('count').innerText = json.count
+                    if (pageNum === 1) {
+                        total = json.count;
+                        if (total % pageSize == 0) {
+                            totalPage  = parseInt(parseInt(total) / pageSize);
+                        } else {
+                            totalPage = parseInt(parseInt(total) / pageSize + 1);
+                        }
+                    }
+
+                    for(var transfer of json.transfers) {
+                        setTimeout(fn(transfer), ts);
+                        ts += 200
+                    }
+                    
+                    if ((pageNum + 1) <= totalPage) {
+                        baseFun(pageNum + 1);
+                    }
+                }
             }
-        };
+        }
+
+        var jo = 0;
+        function fn(transfer) {
+            return function (){
+                jo += 1;
+                var httpReq = new XMLHttpRequest();
+                httpReq.open('GET', baseUrl + '/api/v2/accounts/' + transfer.senderId, true);
+                httpReq.send();
+                httpReq.onreadystatechange = function () {
+                    if (httpReq.readyState == 4 && httpReq.status == 200) {
+                        var json = httpReq.responseText;
+                        json = JSON.parse(json)
+                        var xasNum = xasDet(json.account.xas, 100000000);
+                        var colr = '';
+                        if (xasNum < 100000) {
+                            colr = '#e91e63';
+                        }
+                        var liBackColor = '#7ecab4'; // #7ecab4 #9bc4c5
+                        if (jo % 2 === 0) liBackColor = '#7ecab4';
+                        var htmlStr = 
+                                `<li style="background-color: ${liBackColor};border-bottom: 1px solid #ffeb3b;padding-bottom: 3px;color:${colr};">
+                                    <span style="padding-left: 5px;font-size:.9rem;">${transfer.senderId}</span> 
+                                    <div style="padding-left: 5px;">${xasNum}</div>
+                                </li>`;
+                        $('#ul').append(htmlStr);
+                    }
+                };
+            }
+        }
+
+        function xasDet(arg1, arg2) {
+            var r1 = arg1.toString(), r2 = arg2.toString(), m, resultVal, d = arguments[2];
+            m = (r2.split(".")[1] ? r2.split(".")[1].length : 0) - (r1.split(".")[1] ? r1.split(".")[1].length : 0);
+            resultVal = Number(r1.replace(".", "")) / Number(r2.replace(".", "")) * Math.pow(10, m);
+            return typeof d !== "number" ? Number(resultVal) : Number(resultVal.toFixed(parseInt(d)));
+        }
 
     </script>
 </head>
-<body>
+<body style="background-color:#7bced2;color:#fff;padding: 0;margin: 0;">
     <div>
-        测试html加载情况
+        <div style="padding: 5px;padding-top:20px;"><span>持币地址数量: </span><span id='count'></span></div>
+        <ul id="ul" style="list-style:none;padding: 0;">
+        </ul>
     </div>
 </body>
 </html>
