@@ -61,17 +61,20 @@
                     if (httpReq.readyState == 4 && httpReq.status == 200) {
                         var json = httpReq.responseText;
                         json = JSON.parse(json)
-                        var xasNum = xasDet(json.account.xas, 100000000);
+                        var xasNum = xasDet((json.account.xas + json.account.weight), 100000000);
                         var colr = '';
                         if (xasNum < 100000) {
                             colr = '#e91e63';
                         }
                         var liBackColor = '#7ecab4'; // #7ecab4 #9bc4c5
                         if (jo % 2 === 0) liBackColor = '#7ecab4';
+                        var accName = '--';
+                        if(json.account.name) accName = json.account.name
                         var htmlStr = 
                                 `<li style="background-color: ${liBackColor};border-bottom: 1px solid #ffeb3b;padding-bottom: 3px;color:${colr};">
                                     <span style="padding-left: 5px;font-size:.9rem;">${transfer.senderId}</span> 
-                                    <div style="padding-left: 5px;">${xasNum}</div>
+                                    <div style="padding-left: 5px;color:#ffeb3b;">${xasNum} (${'锁仓：' + xasDet(json.account.weight, 100000000)})</div>
+                                    <div style="padding-left: 5px;color:#3f51b5;">${accName}</div>
                                 </li>`;
                         $('#ul').append(htmlStr);
                     }
