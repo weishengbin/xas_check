@@ -11,7 +11,12 @@
     <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script type="text/javascript" th:inline="javascript">
         var baseUrl = 'https://wallet.asch.io';
+        var exnodeUrl = 'https://exnode.asch.io';
         var baseAddr = 'AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw';
+        // https://exnode.asch.io/api/v2/transfers?orderBy=timestamp:desc&limit=10&offset=0&ownerId=AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw
+        // {"success":true,"count":21,"transfers":[{"tid":"4b98544f7b4a6ea1f894a6b609367717eec8faf0acfb5c522403912fea842a63","senderId":"APXiT4fyqQeMw1NtDYtMgfFNWctZPnA8ZA","recipientId":"AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw","recipientName":null,"currency":"XAS","amount":"10000000","timestamp":90760752,"height":8120752,"_version_":1,"transaction":{"id":"4b98544f7b4a6ea1f894a6b609367717eec8faf0acfb5c522403912fea842a63","type":1,"timestamp":90760752,"senderId":"APXiT4fyqQeMw1NtDYtMgfFNWctZPnA8ZA","senderPublicKey":"8c84454e05ff42bdb50d7c15b34e38304dddb905831b4e8a181c775361ed8e4e","requestorId":null,"fee":10000000,"signatures":["76f876460d730a0034f7901c4726d4aa862bb5bc959c5076b3a19bcf2c46a82a42b06738a056b1e246cdbec5bc9801b50909ea59da1d5b8be8b99093309bd908"],"secondSignature":null,"args":["10000000","AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw"],"height":8120752,"message":"HDCZ","mode":0,"_version_":1}},{"tid":"530df2f43de4978a719b13f31c6be4c12dd875ce19b7716b589662d9b04d9bf8","senderId":"AwrgZHK17sc8uTkrmGn4HmKReoxRt6AAC","recipientId":"AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw","recipientName":null,"currency":"XAS","amount":"10000000","timestamp":90760166,"height":8120702,"_version_":1,"transaction":{"id":"530df2f43de4978a719b13f31c6be4c12dd875ce19b7716b589662d9b04d9bf8","type":1,"timestamp":90760166,"senderId":"AwrgZHK17sc8uTkrmGn4HmKReoxRt6AAC","senderPublicKey":"f15db7b8de0038a91d01021c1faa8298609a24e6cc9d4852e3c3672b8a3716ce","requestorId":null,"fee":10000000,"signatures":["4cc11a5507b45ebc86a4f2cb376016bc1cff360ffa823095118afb8d4ab8d281408dd59cb9a4739eec335d76c98386f1eeea6b3de30d7dbafed16bcbfec9ff05"],"secondSignature":"11c39e8141cc4711a9cff9614e802d33ae70909110aa4175689e1536e8b5a733faab66131903139097c5bfa37802fd52c741372bbcb9c15d2575eb87fb51c20e","args":["10000000","AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw"],"height":8120702,"message":"HDCz","mode":0,"_version_":1}},{"tid":"e3f6d85d52bdcdb952fdeca585eecdf5da293791b541927d1eabcb4a838c1035","senderId":"AKgc6Suhu45PbDgM6u1vQhWYE7BbVnMs1i","recipientId":"AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw","recipientName":null,"currency":"XAS","amount":"10000000","timestamp":90750237,"height":8119846,"_version_":1,"transaction":{"id":"e3f6d85d52bdcdb952fdeca585eecdf5da293791b541927d1eabcb4a838c1035","type":1,"timestamp":90750237,"senderId":"AKgc6Suhu45PbDgM6u1vQhWYE7BbVnMs1i","senderPublicKey":"8048346461049c5019868cdd62c04e9d095eba54f0a91b7844e495af6a2af088","requestorId":null,"fee":10000000,"signatures":["cb633a4f1312a31a9b65a987e8b56772e8d90fec89913045aa9c6e7e905d15f9b879a8644478797b3d77024898194b82fd5447bfdec5558dd36818340ee6a506"],"secondSignature":"2d252dea14737c2635c72af2b471606fa106350b3b4f8c8f5e84a0291d20b3166e22e73cc93da6f30a3be2e3dfe841bf15c2152aa74895db99b778111e376308","args":["10000000","AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw"],"height":8119846,"message":"培培","mode":0,"_version_":1}},{"tid":"f4d7b32f07c0a4d8482556c10fbc0b70e67f929fae30f23307719700d89a452b","senderId":"AEbTNgp2asamMi3To5xUwhTxt2dcF2kFDa","recipientId":"AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw","recipientName":null,"currency":"XAS","amount":"10000000","timestamp":90750170,"height":8119840,"_version_":1,"transaction":{"id":"f4d7b32f07c0a4d8482556c10fbc0b70e67f929fae30f23307719700d89a452b","type":1,"timestamp":90750170,"senderId":"AEbTNgp2asamMi3To5xUwhTxt2dcF2kFDa","senderPublicKey":"e2ef3253b6a8877708a4cb5cbcdf5f985991a09aee0d1b76dc46b6ae6bbfb27b","requestorId":null,"fee":10000000,"signatures":["96a2e99988372cd9dfbc1c99e14d3a69611b614fbca149a17f5c2de18aba1a4ef5964d9d3be0567950a42f96bd71dca8cd72c86724c98ee94225997b75b9390a"],"secondSignature":null,"args":["10000000","AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw"],"height":8119840,"message":"翡冷翠","mode":0,"_version_":1}},{"tid":"b191c8b730007b2fee1418f1e108583291fe73f126657c75e66c590fb4b47db7","senderId":"AFXC8hfUj8VKoaS6TPNHnW1Z8vSNyZ3rz5","recipientId":"AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw","recipientName":null,"currency":"XAS","amount":"10000000","timestamp":90738446,"height":8118820,"_version_":1,"transaction":{"id":"b191c8b730007b2fee1418f1e108583291fe73f126657c75e66c590fb4b47db7","type":1,"timestamp":90738446,"senderId":"AFXC8hfUj8VKoaS6TPNHnW1Z8vSNyZ3rz5","senderPublicKey":"35f5529b8884c1c633de2e857043f67d45770ee00d252d4b79d985f23423e252","requestorId":null,"fee":10000000,"signatures":["9f779e8d7e1e9d7be257bcf0f0bc495e77e1955b515f24af8ae52ca9a29b5a02b335e38c2e9f78b15558c70cd52a31c01358542c0bba3fca879d27d014653408"],"secondSignature":null,"args":["10000000","AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw"],"height":8118820,"message":"Y1000","mode":0,"_version_":1}},{"tid":"7beb82a43765407575fecef03170f99738d59331d6e31c7d24b92a19a7835850","senderId":"AL1XnFGxqXGFm9VVjJeRCKkLh3pCR6LFFC","recipientId":"AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw","recipientName":null,"currency":"XAS","amount":"10000000","timestamp":90677138,"height":8113546,"_version_":1,"transaction":{"id":"7beb82a43765407575fecef03170f99738d59331d6e31c7d24b92a19a7835850","type":1,"timestamp":90677138,"senderId":"AL1XnFGxqXGFm9VVjJeRCKkLh3pCR6LFFC","senderPublicKey":"9a46d4042575c9fa7ccbe8d0708996e4f307e81728909357ea814891859543a7","requestorId":null,"fee":10000000,"signatures":["fccced424f7353e1ded28f43024dc6f1da670455687df35a864934834f4a588dee22a5163e4849fafa27608b0a849b00ee43ffdb808f8082bb2edb33b4ae0e0a"],"secondSignature":"b0e0a765d8bc96c8bd1f8226a8c96197f5e5c6ca2fdcdb02ffec25cc177b475bc988b3503ea7a00b4e12d9cf109857b0176889031985610b1487604a4e25af01","args":["10000000","AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw"],"height":8113546,"message":"jym1967_wx, 心中有岸","mode":0,"_version_":1}},{"tid":"49e0b763411f49ef4f0ec0575da97462791a3d16e6bf4fbdb1c77cab18562f88","senderId":"ALsGWdAH86k1PGyWziGzYYPtH5HCDwzYu","recipientId":"AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw","recipientName":null,"currency":"XAS","amount":"11000000","timestamp":90676289,"height":8113474,"_version_":1,"transaction":{"id":"49e0b763411f49ef4f0ec0575da97462791a3d16e6bf4fbdb1c77cab18562f88","type":1,"timestamp":90676289,"senderId":"ALsGWdAH86k1PGyWziGzYYPtH5HCDwzYu","senderPublicKey":"992cb2393539a2c110cf54f57a631485027f00826a9860c76bf159e52a87fc86","requestorId":null,"fee":10000000,"signatures":["92c0ade4c8e53373507221f6c1a5cf1e66f7badc1b9638c9bc9ea74e8ee37e865729f8340d5298f56a72b52f4846b81edc3cf53e08c5a202933b48683834740c"],"secondSignature":"76afbdeef865d2781e3a4bf0944918d1b5537d3e9e7ddc0df5899cd5c90d96a5ec2050652fd7125b7d20efb480e0cbd939403d958b6fd07449bf29a270266d0d","args":["11000000","AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw"],"height":8113474,"message":"","mode":0,"_version_":1}},{"tid":"f2fad806624634d43905e1ce6549f63e8b94b5a9abd6ecf8a3f8d7c1b06f3cba","senderId":"AJgPbrXVqaaGA33MmnSoeu2EMQL5Do4Jvn","recipientId":"AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw","recipientName":null,"currency":"XAS","amount":"10000000","timestamp":90676226,"height":8113470,"_version_":1,"transaction":{"id":"f2fad806624634d43905e1ce6549f63e8b94b5a9abd6ecf8a3f8d7c1b06f3cba","type":1,"timestamp":90676226,"senderId":"AJgPbrXVqaaGA33MmnSoeu2EMQL5Do4Jvn","senderPublicKey":"cf2b50cfb1e46de868e45af451e9b53eec099aab733009b343d063520a24152c","requestorId":null,"fee":10000000,"signatures":["5c64f607eeb25c3b5674e3e2dcac8800907d1ba18d1a9d11b142096310cdfc36396c56ed5a25f90adf1268c4b592f0cb54d02504dbdf9a4af6a843ba6eb1c20e"],"secondSignature":"37caf70e5496ccb10c18e0ad11e5c0b5847c51377f3f1f4ace84e0f864594c433813f438f20582468f996b8b4ab6faff917756e3809306c8b3bb13b7d150470c","args":["10000000","AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw"],"height":8113470,"message":"wechat id : adamvb   name:fantastic","mode":0,"_version_":1}},{"tid":"8987ae31f5a5339a4e3906be854beaab84a387429e3529fd9341180348dd5026","senderId":"ABVSn3Uxb76M6FSV6oPDAJJJuHAfDyqe9K","recipientId":"AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw","recipientName":null,"currency":"XAS","amount":"10000000","timestamp":90670587,"height":8112978,"_version_":1,"transaction":{"id":"8987ae31f5a5339a4e3906be854beaab84a387429e3529fd9341180348dd5026","type":1,"timestamp":90670587,"senderId":"ABVSn3Uxb76M6FSV6oPDAJJJuHAfDyqe9K","senderPublicKey":"add868def29b3f46081e112256468c823091199c405b5f151ebc6931c6262346","requestorId":null,"fee":10000000,"signatures":["351512820c1a61435c53127e3f148ae424df77215df8f0833efb66f6aa32b67772187c017be5e1c8f18c3b8f8dfe392906896412e9dd6f7b9bd09a674e804004"],"secondSignature":"ecdf9cb16dbe64809b2d28fa3ed86e2fd9e9f19322c4082a845a739ea00f777ea23e8337849db45c6a13984061679dec3c8419c3bbfdc374bc6be3faf0f6f002","args":["10000000","AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw"],"height":8112978,"message":"群成员昵称：36号，微信号：zhi951507056","mode":0,"_version_":1}},{"tid":"762f1399cf1717b47def86b2c52ac3c0db6ca8ab48ed42b09018dacd61079be9","senderId":"AHs1WozFTMy5ZDL9G71ey9khu7o1RzA5GR","recipientId":"AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw","recipientName":null,"currency":"XAS","amount":"10000000","timestamp":90664424,"height":8112443,"_version_":1,"transaction":{"id":"762f1399cf1717b47def86b2c52ac3c0db6ca8ab48ed42b09018dacd61079be9","type":1,"timestamp":90664424,"senderId":"AHs1WozFTMy5ZDL9G71ey9khu7o1RzA5GR","senderPublicKey":"347e1082a89c71c1995b03bed7214d16d2795fe91a91d830340a40be6c79ec5b","requestorId":null,"fee":10000000,"signatures":["90a7de47c1e098d75de114d41ddb3afb0a37ae04b7c245ccb1ae224deb719a3b49a5417f2607a86a71e7a61efa39589af198f12aad5e747a5acc755b71ae560b"],"secondSignature":"0c354c62fad8dcc0ffe84884ef3fb941b427cc221becff6416d36511ef2e35ac83e7d2d798b8e0bf952cc89119594dc99f6f04fce4b599ca4d4f4ee74664d301","args":["10000000","AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw"],"height":8112443,"message":"lvx81081715","mode":0,"_version_":1}}]}
+        // https://exnode.asch.io/api/v2/misc/search?query=4b98544f7b4a6ea1f894a6b609367717eec8faf0acfb5c522403912fea842a63
+        // {"success":true,"searchResults":[{"type":"transaction","data":{"id":"4b98544f7b4a6ea1f894a6b609367717eec8faf0acfb5c522403912fea842a63","type":1,"timestamp":90760752,"senderId":"APXiT4fyqQeMw1NtDYtMgfFNWctZPnA8ZA","senderPublicKey":"8c84454e05ff42bdb50d7c15b34e38304dddb905831b4e8a181c775361ed8e4e","requestorId":null,"fee":10000000,"signatures":["76f876460d730a0034f7901c4726d4aa862bb5bc959c5076b3a19bcf2c46a82a42b06738a056b1e246cdbec5bc9801b50909ea59da1d5b8be8b99093309bd908"],"secondSignature":null,"args":["10000000","AMeLsysTJkcvfwwCikxru3HmbBn5bFNkLw"],"height":8120752,"message":"HDCZ","mode":0,"_version_":1}}]}
 
         var total = 0;
         var totalPage = 0;
@@ -28,6 +33,7 @@
                 if (httpRequest.readyState == 4 && httpRequest.status == 200) {
                     var json = httpRequest.responseText;
                     json = JSON.parse(json)
+                    console.log(json);
                     document.getElementById('count').innerText = json.count
                     if (pageNum === 1) {
                         total = json.count;
@@ -54,29 +60,42 @@
         function fn(transfer) {
             return function (){
                 jo += 1;
-                var httpReq = new XMLHttpRequest();
-                httpReq.open('GET', baseUrl + '/api/v2/accounts/' + transfer.senderId, true);
-                httpReq.send();
-                httpReq.onreadystatechange = function () {
-                    if (httpReq.readyState == 4 && httpReq.status == 200) {
-                        var json = httpReq.responseText;
-                        json = JSON.parse(json)
-                        var xasNum = xasDet((json.account.xas + json.account.weight), 100000000);
-                        var colr = '';
-                        if (xasNum < 100000) {
-                            colr = '#e91e63';
-                        }
-                        var liBackColor = '#7ecab4'; // #7ecab4 #9bc4c5
-                        if (jo % 2 === 0) liBackColor = '#7ecab4';
-                        var accName = '--';
-                        if(json.account.name) accName = json.account.name
-                        var htmlStr = 
-                                `<li style="background-color: ${liBackColor};border-bottom: 1px solid #ffeb3b;padding-bottom: 3px;color:${colr};">
-                                    <span style="padding-left: 5px;font-size:.9rem;">${transfer.senderId}</span> 
-                                    <div style="padding-left: 5px;color:#ffeb3b;">${xasNum} (${'锁仓：' + xasDet(json.account.weight, 100000000)})</div>
-                                    <div style="padding-left: 5px;color:#3f51b5;">${accName}</div>
-                                </li>`;
-                        $('#ul').append(htmlStr);
+
+                var httpReq0 = new XMLHttpRequest();
+                httpReq0.open('GET', exnodeUrl + '/api/v2/misc/search?query=' + transfer.tid, true);
+                httpReq0.send();
+                httpReq0.onreadystatechange = function () {
+                    if (httpReq0.readyState == 4 && httpReq0.status == 200) {
+                        var json = httpReq0.responseText;
+                        json = JSON.parse(json);
+                        var remarkMess = json.searchResults[0].data.message;
+                        // ===============================
+                        var httpReq = new XMLHttpRequest();
+                        httpReq.open('GET', baseUrl + '/api/v2/accounts/' + transfer.senderId, true);
+                        httpReq.send();
+                        httpReq.onreadystatechange = function () {
+                            if (httpReq.readyState == 4 && httpReq.status == 200) {
+                                var json = httpReq.responseText;
+                                json = JSON.parse(json)
+                                var xasNum = xasDet((json.account.xas + json.account.weight), 100000000);
+                                var colr = '';
+                                if (xasNum < 100000) {
+                                    colr = '#e91e63';
+                                }
+                                var liBackColor = '#7ecab4'; // #7ecab4 #9bc4c5
+                                if (jo % 2 === 0) liBackColor = '#7ecab4';
+                                var accName = '--';
+                                if(json.account.name) accName = json.account.name
+                                var htmlStr = 
+                                        `<li style="background-color: ${liBackColor};border-bottom: 1px solid #ffeb3b;padding-bottom: 3px;color:${colr};">
+                                            <span style="padding-left: 5px;font-size:.9rem;">${transfer.senderId}</span> 
+                                            <div style="padding-left: 5px;color:#ffeb3b;">${xasNum} (${'锁仓：' + xasDet(json.account.weight, 100000000)})</div>
+                                            <div style="padding-left: 5px;color:#3f51b5;">${'钱包昵称: ' + accName}</div>
+                                            <div style="padding-left: 5px;color:#3f51b5;">${'转账备注: ' + remarkMess}</div>
+                                        </li>`;
+                                $('#ul').append(htmlStr);
+                            }
+                        };
                     }
                 };
             }
